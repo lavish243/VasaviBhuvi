@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  background: #fff;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: #b08a55;
+  color: #fff;
+}
+
+/* =========================
+   COMMON CONTAINER
+========================= */
+
+.container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #b08a55;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+  color: #222;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.section-description {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: #707070;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   PAGE TOP SPACE
+========================= */
+
+.page-content {
+  padding-top: 78px;
+}
+
+.inner-page {
+  padding-top: 78px;
+}
+
+/* =========================
+   COMMON BUTTONS
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #b08a55;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #96703f;
+}
+
+.btn-outline {
+  border-color: #b08a55;
+  background: transparent;
+  color: #b08a55;
+}
+
+.btn-outline:hover {
+  background: #b08a55;
+  color: #fff;
+}
+
+/* =========================
+   FORM RESET
+========================= */
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+/* =========================
+   PAGE HERO
+========================= */
+
+.page-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.page-hero-content .section-eyebrow {
+  color: #d2aa70;
+}
+
+.page-hero-content h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.page-hero-content p {
+  max-width: 600px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================
+   IMAGE SAFETY
+========================= */
+
+.image-wrapper {
+  overflow: hidden;
+  background: #eee;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .page-content,
+  .inner-page {
+    padding-top: 70px;
+  }
+
+  .page-hero {
+    min-height: 340px;
+  }
+
+  .page-hero-content h1 {
+    font-size: 44px;
+  }
+
+  .page-hero-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-title {
+    font-size: 31px;
+  }
+
+  .section-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  .page-hero {
+    min-height: 300px;
+  }
+
+  .page-hero-content h1 {
+    font-size: 38px;
+  }
+}

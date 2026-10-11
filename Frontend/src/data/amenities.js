@@ -1,0 +1,15 @@
+export const amenities = [
+  ["Terrace Swimming Pool", "Leisure", "https://vasavibhuvi.com/images/744935165-swimming-pool.webp"],
+  ["Cycling Track", "Fitness", "https://vasavibhuvi.com/images/744935245-cycling.webp"],
+  ["Supermarket", "Convenience", "https://vasavibhuvi.com/images/744936107-supermarket.webp"],
+  ["Indoor Games Room", "Leisure", "https://vasavibhuvi.com/images/744936016-indoor-games.webp"],
+  ["Spa & Salon", "Lifestyle", "https://vasavibhuvi.com/images/744935622-security.webp"],
+  ["Gym", "Fitness", "https://vasavibhuvi.com/images/744935391-gym.webp"],
+  ["Yoga & Meditation Rooms", "Wellness", "https://vasavibhuvi.com/images/744935449-yoga.webp"],
+  ["Shuttle Court", "Sports", "https://vasavibhuvi.com/images/744936208-shuttle.webp"],
+  ["Business Center", "Work", "https://vasavibhuvi.com/images/744935326-business.webp"],
+  ["Walkers & Joggers Track", "Fitness", "https://vasavibhuvi.com/images/Walker.webp"],
+  ["Banquet Hall", "Lifestyle", "https://vasavibhuvi.com/images/744935719-banquet-hall.webp"],
+  ["Basketball Court", "Sports", "https://vasavibhuvi.com/images/744935562-basket-ball.webp"],
+  ["Cricket Net", "Sports", "https://vasavibhuvi.com/images/744935277-cricket.webp"],
+].map(([name, category, image], index) => ({ id: index + 1, name, category, description: `Enjoy the ${name.toLowerCase()} at Vasavi Bhuvi.`, image }));

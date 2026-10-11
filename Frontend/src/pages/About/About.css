@@ -1,0 +1,1108 @@
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-page {
+  background: #f7f5f0;
+  color: #1d1d1b;
+}
+
+/* =========================================================
+   SHARED CONTAINER
+========================================================= */
+
+.about-container {
+  width: min(1240px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.about-small-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #8d7653;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.about-small-label.light {
+  color: #c7aa78;
+}
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 65px;
+
+  color: #8c877e;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.about-section-label::after {
+  content: "";
+
+  width: 50px;
+  height: 1px;
+
+  background: rgba(29, 29, 27, 0.18);
+}
+
+.about-section-label.light {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.about-section-label.light::after {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  height: min(850px, 92vh);
+  min-height: 650px;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  background: #1d1d1b;
+  color: #fff;
+}
+
+.about-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  animation: aboutHeroZoom 14s ease-out forwards;
+}
+
+@keyframes aboutHeroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 9, 0.78) 0%,
+      rgba(10, 10, 9, 0.42) 45%,
+      rgba(10, 10, 9, 0.08) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(10, 10, 9, 0.68) 0%,
+      transparent 55%
+    );
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1240px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding-bottom: 105px;
+}
+
+.about-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: #d2b782;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.about-hero-eyebrow::before {
+  content: "";
+
+  width: 40px;
+  height: 1px;
+
+  background: #d2b782;
+}
+
+.about-hero h1 {
+  margin: 0;
+
+  font-size: clamp(72px, 10vw, 145px);
+
+  line-height: 0.82;
+
+  font-weight: 400;
+
+  letter-spacing: -0.075em;
+}
+
+.about-hero h1 em {
+  color: #d2b782;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.about-hero-content p {
+  max-width: 420px;
+
+  margin: 35px 0 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-hero-bottom {
+  position: absolute;
+
+  right: 60px;
+  bottom: 45px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.about-hero-bottom svg {
+  color: #c7aa78;
+
+  animation: aboutArrowDown 1.7s infinite;
+}
+
+@keyframes aboutArrowDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.about-story {
+  padding: 135px 0;
+}
+
+.about-story-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 0.9fr;
+
+  gap: 110px;
+}
+
+.about-story-heading h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 74px);
+
+  line-height: 0.98;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.about-story-heading h2 span {
+  color: #8d7653;
+}
+
+.about-story-copy {
+  padding-top: 10px;
+}
+
+.about-story-copy p {
+  margin: 0 0 25px;
+
+  color: #77736c;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.about-story-copy .about-lead {
+  color: #2d2c29;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   STORY IMAGE
+========================================================= */
+
+.about-story-image-section {
+  padding: 0 0 135px;
+}
+
+.about-story-image {
+  position: relative;
+
+  width: min(1400px, calc(100% - 100px));
+
+  height: 650px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 1s ease;
+}
+
+.about-story-image:hover img {
+  transform: scale(1.025);
+}
+
+.about-image-caption {
+  position: absolute;
+
+  left: 40px;
+  bottom: 35px;
+
+  max-width: 450px;
+
+  padding: 20px 25px;
+
+  background: rgba(20, 20, 19, 0.78);
+
+  color: #fff;
+
+  backdrop-filter: blur(7px);
+}
+
+.about-image-caption span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #c7aa78;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.about-image-caption strong {
+  font-size: 20px;
+  font-weight: 400;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.about-philosophy {
+  padding: 130px 0;
+
+  background: #1d1d1b;
+
+  color: #fff;
+}
+
+.about-philosophy-heading {
+  display: grid;
+
+  grid-template-columns: 1fr 0.65fr;
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 70px;
+}
+
+.about-philosophy-heading h2 {
+  margin: 0;
+
+  font-size: clamp(52px, 6vw, 85px);
+
+  line-height: 0.92;
+
+  font-weight: 400;
+
+  letter-spacing: -0.06em;
+}
+
+.about-philosophy-heading h2 span {
+  color: #c7aa78;
+}
+
+.about-philosophy-heading p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-philosophy-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.about-philosophy-card {
+  position: relative;
+
+  min-height: 340px;
+
+  padding: 30px 25px 30px 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.about-philosophy-card:not(:first-child) {
+  padding-left: 25px;
+}
+
+.about-philosophy-card:last-child {
+  border-right: 0;
+}
+
+.about-philosophy-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 80px;
+}
+
+.about-philosophy-card-top span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+}
+
+.about-philosophy-card-top svg {
+  color: #c7aa78;
+}
+
+.about-philosophy-card h3 {
+  margin: 0 0 18px;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.about-philosophy-card p {
+  max-width: 250px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.about-card-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 30px;
+  height: 1px;
+
+  background: #c7aa78;
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.about-experience {
+  padding: 135px 0;
+}
+
+.about-experience-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 0.85fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.about-experience-image {
+  position: relative;
+
+  height: 620px;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.about-experience-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.about-experience-number {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 65px;
+  height: 65px;
+
+  background: #1d1d1b;
+
+  color: #c7aa78;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.about-experience-content h2 {
+  margin: 0 0 30px;
+
+  font-size: clamp(50px, 5vw, 75px);
+
+  line-height: 0.94;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.about-experience-content h2 span {
+  color: #8d7653;
+}
+
+.about-experience-content p {
+  max-width: 500px;
+
+  margin: 0 0 22px;
+
+  color: #77736c;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+.about-experience-content .about-lead {
+  color: #2c2b28;
+
+  font-size: 19px;
+
+  line-height: 1.6;
+}
+
+.about-outline-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #1d1d1b;
+
+  color: #1d1d1b;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.about-outline-button:hover {
+  color: #8d7653;
+
+  border-color: #8d7653;
+}
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.about-highlights {
+  padding: 130px 0;
+
+  background: #ece8df;
+}
+
+.about-highlights-heading {
+  margin-bottom: 65px;
+}
+
+.about-highlights-heading h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 5.5vw, 78px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.about-highlights-heading h2 span {
+  color: #8d7653;
+}
+
+.about-highlight-list {
+  border-top: 1px solid rgba(29, 29, 27, 0.18);
+}
+
+.about-highlight-row {
+  display: grid;
+
+  grid-template-columns: 70px 0.8fr 1fr 30px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  min-height: 135px;
+
+  border-bottom: 1px solid rgba(29, 29, 27, 0.15);
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease;
+}
+
+.about-highlight-row:hover {
+  padding-left: 12px;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.about-highlight-number {
+  color: #9a9388;
+
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+}
+
+.about-highlight-row h3 {
+  margin: 0;
+
+  font-size: 23px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+.about-highlight-row p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #77736c;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.about-highlight-arrow {
+  color: #8d7653;
+}
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.about-statement {
+  position: relative;
+
+  height: 680px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #222;
+  color: #fff;
+}
+
+.about-statement-image {
+  position: absolute;
+  inset: 0;
+}
+
+.about-statement-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.about-statement-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(15, 15, 14, 0.62);
+}
+
+.about-statement-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+}
+
+.about-statement-content span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #c7aa78;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.about-statement-content h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 90px);
+
+  line-height: 0.92;
+
+  font-weight: 400;
+
+  letter-spacing: -0.06em;
+}
+
+.about-statement-content em {
+  color: #d0b47f;
+
+  font-family: Georgia, serif;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-final-cta {
+  padding: 100px 0;
+
+  background: #dcd3c4;
+}
+
+.about-final-cta .about-container {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.about-final-cta span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #806c4d;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.about-final-cta h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 5vw, 70px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.about-final-cta h2 span {
+  display: inline;
+
+  margin: 0;
+
+  color: #806c4d;
+
+  font-size: inherit;
+
+  font-weight: inherit;
+
+  letter-spacing: inherit;
+}
+
+.about-final-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 17px 23px;
+
+  background: #1d1d1b;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-final-button:hover {
+  background: #8d7653;
+
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-philosophy-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .about-philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-philosophy-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .about-philosophy-card:nth-child(3),
+  .about-philosophy-card:nth-child(4) {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .about-experience-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .about-experience-image {
+    height: 550px;
+  }
+
+  .about-highlight-row {
+    grid-template-columns: 55px 0.8fr 1fr 25px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .about-container {
+    width: calc(100% - 36px);
+  }
+
+  .about-hero {
+    min-height: 600px;
+    height: 82vh;
+  }
+
+  .about-hero-content {
+    width: calc(100% - 36px);
+
+    padding-bottom: 85px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(62px, 18vw, 92px);
+  }
+
+  .about-hero-content p {
+    max-width: 300px;
+
+    font-size: 13px;
+  }
+
+  .about-hero-bottom {
+    right: 20px;
+    bottom: 25px;
+  }
+
+  .about-story,
+  .about-philosophy,
+  .about-experience,
+  .about-highlights {
+    padding: 80px 0;
+  }
+
+  .about-section-label {
+    margin-bottom: 45px;
+  }
+
+  .about-story-heading h2 {
+    font-size: 48px;
+  }
+
+  .about-story-copy .about-lead {
+    font-size: 17px;
+  }
+
+  .about-story-image-section {
+    padding-bottom: 80px;
+  }
+
+  .about-story-image {
+    width: calc(100% - 30px);
+
+    height: 430px;
+  }
+
+  .about-image-caption {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    padding: 17px;
+  }
+
+  .about-image-caption strong {
+    font-size: 16px;
+  }
+
+  .about-philosophy-heading h2 {
+    font-size: 54px;
+  }
+
+  .about-philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-philosophy-card,
+  .about-philosophy-card:not(:first-child) {
+    min-height: auto;
+
+    padding: 25px 0;
+
+    border-right: 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .about-philosophy-card:last-child {
+    border-bottom: 0;
+  }
+
+  .about-philosophy-card-top {
+    margin-bottom: 45px;
+  }
+
+  .about-experience-image {
+    height: 430px;
+  }
+
+  .about-experience-content h2 {
+    font-size: 53px;
+  }
+
+  .about-highlight-row {
+    grid-template-columns: 35px 1fr 20px;
+
+    gap: 15px;
+
+    padding: 25px 0;
+  }
+
+  .about-highlight-row h3 {
+    font-size: 19px;
+  }
+
+  .about-highlight-row p {
+    grid-column: 2 / -1;
+
+    font-size: 12px;
+  }
+
+  .about-highlight-arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .about-statement {
+    height: 520px;
+  }
+
+  .about-statement-content {
+    width: calc(100% - 35px);
+  }
+
+  .about-statement-content h2 {
+    font-size: 49px;
+  }
+
+  .about-final-cta {
+    padding: 75px 0;
+  }
+
+  .about-final-cta .about-container {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .about-final-cta h2 {
+    font-size: 50px;
+  }
+
+  .about-final-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+}

@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+.vs/
+.vscode/
+.env
+appsettings.*.local.json
+wwwroot/uploads/**
+!wwwroot/uploads/.gitkeep

@@ -1,0 +1,254 @@
+.about-project {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.about-project::before {
+  content: "BHUVI";
+  position: absolute;
+  top: 70px;
+  right: -40px;
+  color: rgba(176, 138, 85, 0.035);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 180px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  pointer-events: none;
+}
+
+.about-project-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.about-project-content {
+  padding-right: 20px;
+}
+
+.about-project-title {
+  margin: 0;
+  color: #222;
+  font-size: clamp(42px, 4.4vw, 64px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.about-project-title em {
+  color: #b08a55;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.about-project-intro {
+  margin: 28px 0 0;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.about-project-text {
+  margin: 16px 0 0;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.about-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding-bottom: 9px;
+  color: #9a7447;
+  border-bottom: 1px solid #b08a55;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.about-project-link:hover {
+  gap: 16px;
+  color: #76552f;
+}
+
+.about-project-info {
+  position: relative;
+}
+
+.about-project-image {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.about-project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0, 0, 0, 0.42)
+    );
+}
+
+.about-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.about-project-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-project-image-label {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.about-project-image-label span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.about-project-image-label strong {
+  margin-top: 4px;
+  color: #d3aa70;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.about-project-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #f8f6f2;
+}
+
+.about-project-fact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 95px;
+  padding: 18px 20px;
+  border-right: 1px solid #e7e0d5;
+  border-bottom: 1px solid #e7e0d5;
+}
+
+.about-project-fact:nth-child(2n) {
+  border-right: 0;
+}
+
+.about-project-fact:nth-child(3),
+.about-project-fact:nth-child(4) {
+  border-bottom: 0;
+}
+
+.about-project-fact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  color: #b08a55;
+  border: 1px solid rgba(176, 138, 85, 0.35);
+}
+
+.about-project-fact div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-project-fact strong {
+  color: #282828;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.about-project-fact span {
+  margin-top: 4px;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .about-project-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-project-content {
+    max-width: 700px;
+    padding-right: 0;
+  }
+
+  .about-project-image {
+    height: 460px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-project::before {
+    display: none;
+  }
+
+  .about-project-title {
+    font-size: 38px;
+    letter-spacing: -0.8px;
+  }
+
+  .about-project-intro {
+    margin-top: 22px;
+    font-size: 14px;
+  }
+
+  .about-project-text {
+    font-size: 13px;
+  }
+
+  .about-project-image {
+    height: 320px;
+  }
+
+  .about-project-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .about-project-fact {
+    min-height: 82px;
+    border-right: 0;
+    border-bottom: 1px solid #e7e0d5;
+  }
+
+  .about-project-fact:nth-child(3) {
+    border-bottom: 1px solid #e7e0d5;
+  }
+
+  .about-project-fact:nth-child(4) {
+    border-bottom: 0;
+  }
+}

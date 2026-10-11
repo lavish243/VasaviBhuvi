@@ -1,0 +1,401 @@
+.amenities-section {
+  position: relative;
+
+  padding: 130px 0;
+
+  background: #ebe8e1;
+
+  color: #171717;
+
+  overflow: hidden;
+}
+
+.amenities-container {
+  width: min(1320px, calc(100% - 64px));
+
+  margin: 0 auto;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.amenities-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 0.6fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  padding-bottom: 65px;
+
+  border-bottom:
+    1px solid rgba(23, 23, 23, 0.14);
+}
+
+.amenities-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #8b7653;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+.amenities-eyebrow::before {
+  content: "";
+
+  width: 35px;
+
+  height: 1px;
+
+  background: #8b7653;
+}
+
+.amenities-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+}
+
+.amenities-header h2 span {
+  color: #8b7653;
+}
+
+.amenities-header-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.amenities-header-right p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #6d6d6d;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.amenities-view-all {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  padding-bottom: 7px;
+
+  border-bottom:
+    1px solid #171717;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.amenities-view-all:hover {
+  color: #8b7653;
+
+  border-color: #8b7653;
+}
+
+/* =================================
+   GRID
+================================= */
+
+.amenities-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin-top: 35px;
+}
+
+/* =================================
+   CARD
+================================= */
+
+.amenity-card {
+  position: relative;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.amenity-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   IMAGE
+================================= */
+
+.amenity-image {
+  position: relative;
+
+  height: 275px;
+
+  overflow: hidden;
+
+  background: #d8d4cc;
+}
+
+.amenity-card-large .amenity-image {
+  height: 350px;
+}
+
+.amenity-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.amenity-card:hover .amenity-image img {
+  transform: scale(1.06);
+}
+
+.amenity-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 35%,
+      rgba(0, 0, 0, 0.55)
+    );
+}
+
+.amenity-icon {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.4);
+
+  background:
+    rgba(0, 0, 0, 0.16);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(7px);
+}
+
+.amenity-category {
+  position: absolute;
+
+  right: 20px;
+  bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.amenity-content {
+  min-height: 185px;
+
+  padding: 25px 26px 27px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.amenity-content h3 {
+  margin: 0;
+
+  font-size: 23px;
+
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+.amenity-content p {
+  max-width: 340px;
+
+  margin: 10px 0 0;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.amenity-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: auto;
+  padding-top: 20px;
+
+  color: #171717;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.amenity-link:hover {
+  color: #8b7653;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+  .amenities-section {
+    padding: 100px 0;
+  }
+
+  .amenities-header {
+    gap: 45px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenity-card-large .amenity-image {
+    height: 300px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 680px) {
+  .amenities-section {
+    padding: 80px 0;
+  }
+
+  .amenities-container {
+    width: calc(100% - 36px);
+  }
+
+  .amenities-header {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    padding-bottom: 45px;
+  }
+
+  .amenities-header h2 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+
+  .amenities-header-right p {
+    font-size: 14px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .amenity-image,
+  .amenity-card-large .amenity-image {
+    height: 280px;
+  }
+
+  .amenity-content {
+    min-height: 175px;
+
+    padding: 23px;
+  }
+
+  .amenity-content h3 {
+    font-size: 22px;
+  }
+}

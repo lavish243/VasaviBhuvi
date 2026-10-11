@@ -1,0 +1,469 @@
+.configurations {
+  position: relative;
+
+  padding: 130px 0;
+
+  background: #f7f5f0;
+
+  color: #171717;
+
+  overflow: hidden;
+}
+
+.configurations-container {
+  width: min(1320px, calc(100% - 64px));
+
+  margin: 0 auto;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.configurations-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 0.6fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  padding-bottom: 65px;
+
+  border-bottom:
+    1px solid rgba(23, 23, 23, 0.14);
+}
+
+.configurations-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #8b7653;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+.configurations-eyebrow::before {
+  content: "";
+
+  width: 35px;
+
+  height: 1px;
+
+  background: #8b7653;
+}
+
+.configurations-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+}
+
+.configurations-header h2 span {
+  color: #8b7653;
+}
+
+.configurations-header-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.configurations-header-right p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #6d6d6d;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.configurations-view-all {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid #171717;
+
+  padding-bottom: 7px;
+}
+
+.configurations-view-all:hover {
+  color: #8b7653;
+
+  border-color: #8b7653;
+}
+
+/* ================================
+   GRID
+================================ */
+
+.configurations-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+
+  margin-top: 35px;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.configuration-card {
+  background: #ffffff;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(23, 23, 23, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.configuration-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   IMAGE
+================================ */
+
+.configuration-image {
+  position: relative;
+
+  aspect-ratio: 1 / 0.82;
+
+  overflow: hidden;
+
+  background: #e8e5de;
+}
+
+.configuration-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.configuration-card:hover
+.configuration-image img {
+  transform: scale(1.04);
+}
+
+.configuration-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.42)
+    );
+}
+
+.configuration-number {
+  position: absolute;
+
+  left: 22px;
+  bottom: 20px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.configuration-expand {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.configuration-expand:hover {
+  background: #ffffff;
+
+  color: #171717;
+
+  transform: rotate(45deg);
+}
+
+/* ================================
+   CONTENT
+================================ */
+
+.configuration-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 210px;
+
+  padding: 28px;
+}
+
+.configuration-small-title {
+  color: #8b7653;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.configuration-content h3 {
+  margin: 10px 0 0;
+
+  font-size: 27px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+}
+
+.configuration-content p {
+  margin: 9px 0 0;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.configuration-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(23, 23, 23, 0.1);
+}
+
+.configuration-plan-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #171717;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  letter-spacing: 0.03em;
+}
+
+.configuration-plan-link:hover {
+  color: #8b7653;
+}
+
+.configuration-enquire {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 37px;
+
+  padding: 0 15px;
+
+  background: #171717;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease;
+}
+
+.configuration-enquire:hover {
+  background: #8b7653;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+  .configurations {
+    padding: 100px 0;
+  }
+
+  .configurations-header {
+    gap: 45px;
+  }
+
+  .configurations-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .configuration-card:last-child {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 11px);
+
+    justify-self: center;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 680px) {
+  .configurations {
+    padding: 80px 0;
+  }
+
+  .configurations-container {
+    width: calc(100% - 36px);
+  }
+
+  .configurations-header {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    padding-bottom: 45px;
+  }
+
+  .configurations-header h2 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+
+  .configurations-header-right p {
+    font-size: 14px;
+  }
+
+  .configurations-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .configuration-card:last-child {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+  .configuration-image {
+    aspect-ratio: 1 / 0.78;
+  }
+
+  .configuration-content {
+    min-height: 190px;
+
+    padding: 23px;
+  }
+
+  .configuration-content h3 {
+    font-size: 24px;
+  }
+}

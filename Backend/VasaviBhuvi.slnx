@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="VasaviBhuvi.API/VasaviBhuvi.API.csproj" />
+  <Project Path="VasaviBhuvi.Application/VasaviBhuvi.Application.csproj" />
+  <Project Path="VasaviBhuvi.Domain/VasaviBhuvi.Domain.csproj" />
+  <Project Path="VasaviBhuvi.Infrastructure/VasaviBhuvi.Infrastructure.csproj" />
+</Solution>

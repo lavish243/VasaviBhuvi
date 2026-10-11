@@ -1,0 +1,291 @@
+.amenity-admin {
+  min-height: 100vh;
+  background: #f7f6f3;
+  color: #252525;
+}
+
+.amenity-admin-header {
+  padding: 30px 5%;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.amenity-admin-header span,
+.amenity-kicker {
+  color: #b08a55;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.amenity-admin-header h1 {
+  margin: 8px 0;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.amenity-admin-header p {
+  margin: 0;
+  color: #ccc;
+}
+
+.amenity-admin-main {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+.amenity-form-card,
+.amenity-list-card {
+  background: #fff;
+  border: 1px solid #e9e4dc;
+  border-radius: 8px;
+  padding: 26px;
+  margin-bottom: 28px;
+}
+
+.amenity-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.amenity-section-heading h2 {
+  margin: 8px 0 0;
+  font-size: 23px;
+}
+
+.amenity-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.amenity-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.amenity-form-grid input,
+.amenity-form-grid textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9d4cc;
+  border-radius: 5px;
+  background: #fff;
+  color: #252525;
+  font: inherit;
+  font-weight: 400;
+}
+
+.amenity-form-grid input:focus,
+.amenity-form-grid textarea:focus {
+  outline: 2px solid #d2aa70;
+  border-color: #b08a55;
+}
+
+.amenity-form-grid textarea {
+  resize: vertical;
+}
+
+.amenity-form-grid small {
+  color: #777;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.amenity-full-width {
+  grid-column: 1 / -1;
+}
+
+.amenity-preview img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #e9e4dc;
+}
+
+.amenity-form-actions,
+.amenity-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.amenity-form-actions {
+  margin-top: 24px;
+}
+
+.amenity-primary-btn,
+.amenity-secondary-btn,
+.amenity-edit-btn,
+.amenity-delete-btn,
+.amenity-text-btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.amenity-primary-btn {
+  background: #b08a55;
+  color: #fff;
+}
+
+.amenity-primary-btn:hover {
+  background: #927044;
+}
+
+.amenity-secondary-btn {
+  background: #eeeae4;
+  color: #333;
+}
+
+.amenity-secondary-btn:hover {
+  background: #e0d9cf;
+}
+
+.amenity-edit-btn {
+  background: #f1e5d3;
+  color: #78552b;
+}
+
+.amenity-delete-btn {
+  background: #fae9e7;
+  color: #a52b22;
+}
+
+.amenity-text-btn {
+  background: transparent;
+  color: #8b683c;
+}
+
+.amenity-primary-btn:disabled,
+.amenity-secondary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.amenity-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.amenity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.amenity-table th,
+.amenity-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee9e2;
+  vertical-align: middle;
+}
+
+.amenity-table th {
+  background: #f8f5f0;
+  color: #65543e;
+  white-space: nowrap;
+}
+
+.amenity-thumb,
+.amenity-no-image {
+  display: block;
+  width: 90px;
+  height: 65px;
+  border-radius: 4px;
+}
+
+.amenity-thumb {
+  object-fit: cover;
+  background: #f5f3ef;
+  border: 1px solid #eee9e2;
+}
+
+.amenity-no-image {
+  display: grid;
+  place-items: center;
+  background: #f5f3ef;
+  color: #888;
+  font-size: 11px;
+}
+
+.amenity-description-cell {
+  min-width: 200px;
+  max-width: 320px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.amenity-empty {
+  padding: 22px 0;
+  color: #777;
+}
+
+.amenity-alert {
+  padding: 14px 16px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+
+.amenity-alert-error {
+  background: #fff0ef;
+  border: 1px solid #e7b7b3;
+  color: #a52b22;
+}
+
+.amenity-alert-success {
+  background: #edf8ef;
+  border: 1px solid #b8dfbf;
+  color: #236b32;
+}
+
+@media (max-width: 650px) {
+  .amenity-admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .amenity-admin-main {
+    width: calc(100% - 24px);
+    padding-top: 20px;
+  }
+
+  .amenity-form-card,
+  .amenity-list-card {
+    padding: 18px;
+  }
+
+  .amenity-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-full-width {
+    grid-column: auto;
+  }
+
+  .amenity-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

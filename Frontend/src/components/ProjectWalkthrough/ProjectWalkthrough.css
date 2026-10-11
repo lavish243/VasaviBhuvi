@@ -1,0 +1,169 @@
+.project-walkthrough {
+  background: #222;
+  color: #fff;
+}
+
+.project-walkthrough .section-eyebrow {
+  color: #c7a06a;
+}
+
+.project-walkthrough .section-title {
+  color: #fff;
+}
+
+.project-walkthrough .section-description {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* VIDEO */
+
+.walkthrough-video-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  background: #111;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.walkthrough-video {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+}
+
+.walkthrough-video iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+/* PLAY INDICATOR */
+
+.walkthrough-play {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+
+  background: rgba(176, 138, 85, 0.9);
+
+  color: #fff;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.walkthrough-video-wrapper:hover .walkthrough-play {
+  opacity: 1;
+}
+
+/* FOOTER */
+
+.walkthrough-footer {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.walkthrough-footer span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #c7a06a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.walkthrough-footer p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 13px;
+}
+
+.walkthrough-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.walkthrough-link:hover {
+  color: #c7a06a;
+  gap: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .walkthrough-video-wrapper {
+    width: 100%;
+  }
+
+  .walkthrough-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .walkthrough-play {
+    width: 52px;
+    height: 52px;
+  }
+}
+.walkthrough-video > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

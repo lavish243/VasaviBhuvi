@@ -1,0 +1,437 @@
+.project-stats {
+  position: relative;
+
+  padding: 130px 0;
+
+  background: #171717;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+.project-stats::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: -280px;
+  top: -300px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  pointer-events: none;
+}
+
+.project-stats::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -250px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  pointer-events: none;
+}
+
+/* =================================
+   CONTAINER
+================================= */
+
+.project-stats-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1320px, calc(100% - 64px));
+
+  margin: 0 auto;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.project-stats-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 0.55fr);
+
+  gap: 100px;
+
+  align-items: end;
+
+  padding-bottom: 70px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.14);
+}
+
+.project-stats-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: #c7aa78;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+.project-stats-eyebrow::before {
+  content: "";
+
+  width: 35px;
+
+  height: 1px;
+
+  background: #c7aa78;
+}
+
+.project-stats-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+
+  line-height: 0.96;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+}
+
+.project-stats-header h2 span {
+  color: #c7aa78;
+}
+
+.project-stats-header > p {
+  margin: 0;
+
+  max-width: 430px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+/* =================================
+   STATS GRID
+================================= */
+
+.project-stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-highlight {
+  position: relative;
+
+  min-height: 235px;
+
+  padding: 35px 34px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  transition:
+    background 0.3s ease;
+}
+
+.project-highlight:nth-child(3),
+.project-highlight:nth-child(6) {
+  border-right: 0;
+}
+
+.project-highlight:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.project-highlight-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #c7aa78;
+}
+
+.project-highlight-number {
+  display: flex;
+
+  align-items: baseline;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 52px;
+}
+
+.project-highlight-number strong {
+  font-size: clamp(42px, 4vw, 65px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.045em;
+}
+
+.project-highlight-number span {
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+
+  letter-spacing: 0.03em;
+}
+
+.project-highlight-label {
+  margin-top: 15px;
+
+  color: rgba(255, 255, 255, 0.54);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+/* =================================
+   CONFIGURATION
+================================= */
+
+.project-configuration {
+  display: grid;
+
+  grid-template-columns: 0.75fr 1.25fr;
+
+  gap: 60px;
+
+  margin-top: 75px;
+
+  padding-top: 35px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.14);
+}
+
+.project-configuration-title {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.project-configuration-title span {
+  color: #c7aa78;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.project-configuration-title strong {
+  max-width: 320px;
+
+  font-size: 22px;
+
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+.project-configuration-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 0;
+}
+
+.project-configuration-options > div {
+  padding: 0 28px;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.project-configuration-options strong {
+  display: block;
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+}
+
+.project-configuration-options span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+  .project-stats {
+    padding: 100px 0;
+  }
+
+  .project-stats-header {
+    gap: 50px;
+  }
+
+  .project-highlight {
+    min-height: 210px;
+
+    padding: 28px 24px;
+  }
+
+  .project-highlight-number {
+    margin-top: 42px;
+  }
+
+  .project-configuration {
+    gap: 35px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+  .project-stats {
+    padding: 80px 0;
+  }
+
+  .project-stats-container {
+    width: calc(100% - 36px);
+  }
+
+  .project-stats-header {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+
+    padding-bottom: 45px;
+  }
+
+  .project-stats-header h2 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+
+  .project-stats-header > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .project-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-highlight {
+    min-height: 190px;
+
+    padding: 24px 18px;
+  }
+
+  .project-highlight:nth-child(3) {
+    border-right:
+      1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .project-highlight:nth-child(even) {
+    border-right: 0;
+  }
+
+  .project-highlight-number {
+    margin-top: 32px;
+  }
+
+  .project-highlight-number strong {
+    font-size: 39px;
+  }
+
+  .project-highlight-number span {
+    font-size: 10px;
+  }
+
+  .project-highlight-label {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  .project-configuration {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    margin-top: 55px;
+  }
+
+  .project-configuration-options {
+    grid-template-columns: 1fr;
+  }
+
+  .project-configuration-options > div {
+    padding: 20px 0;
+
+    border-left: 0;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .project-configuration-options strong {
+    font-size: 27px;
+  }
+}

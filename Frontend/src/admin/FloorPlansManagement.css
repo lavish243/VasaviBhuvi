@@ -1,0 +1,280 @@
+.fp-admin {
+  min-height: 100vh;
+  background: #f7f6f3;
+  color: #252525;
+}
+
+.fp-admin-header {
+  padding: 30px 5%;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.fp-admin-header span,
+.fp-kicker {
+  color: #b08a55;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.fp-admin-header h1 {
+  margin: 8px 0;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.fp-admin-header p {
+  margin: 0;
+  color: #ccc;
+}
+
+.fp-admin-main {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+.fp-form-card,
+.fp-list-section {
+  background: #fff;
+  border: 1px solid #e9e4dc;
+  border-radius: 8px;
+  padding: 26px;
+  margin-bottom: 28px;
+}
+
+.fp-card-heading,
+.fp-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.fp-card-heading h2,
+.fp-list-heading h2 {
+  margin: 8px 0 0;
+  font-size: 23px;
+}
+
+.fp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.fp-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fp-form-grid input,
+.fp-form-grid select,
+.fp-form-grid textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9d4cc;
+  border-radius: 5px;
+  background: #fff;
+  color: #252525;
+  font: inherit;
+  font-weight: 400;
+}
+
+.fp-form-grid input:focus,
+.fp-form-grid select:focus,
+.fp-form-grid textarea:focus {
+  outline: 2px solid #d2aa70;
+  border-color: #b08a55;
+}
+
+.fp-form-grid textarea {
+  resize: vertical;
+}
+
+.fp-form-grid small {
+  color: #777;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.fp-full-width {
+  grid-column: 1 / -1;
+}
+
+.fp-form-actions,
+.fp-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.fp-form-actions {
+  margin-top: 24px;
+}
+
+.fp-primary-btn,
+.fp-secondary-btn,
+.fp-edit-btn,
+.fp-delete-btn,
+.fp-text-btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.fp-primary-btn {
+  background: #b08a55;
+  color: #fff;
+}
+
+.fp-primary-btn:hover {
+  background: #927044;
+}
+
+.fp-secondary-btn {
+  background: #eeeae4;
+  color: #333;
+}
+
+.fp-secondary-btn:hover {
+  background: #e0d9cf;
+}
+
+.fp-edit-btn {
+  background: #f1e5d3;
+  color: #78552b;
+}
+
+.fp-delete-btn {
+  background: #fae9e7;
+  color: #a52b22;
+}
+
+.fp-text-btn {
+  background: transparent;
+  color: #8b683c;
+}
+
+.fp-primary-btn:disabled,
+.fp-secondary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fp-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.fp-table th,
+.fp-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee9e2;
+  vertical-align: middle;
+}
+
+.fp-table th {
+  background: #f8f5f0;
+  color: #65543e;
+  white-space: nowrap;
+}
+
+.fp-thumb {
+  display: block;
+  width: 90px;
+  height: 65px;
+  object-fit: contain;
+  background: #f5f3ef;
+  border: 1px solid #eee9e2;
+  border-radius: 4px;
+}
+
+.fp-no-image {
+  width: 90px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  background: #f5f3ef;
+  color: #888;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+.fp-empty {
+  padding: 22px 0;
+  color: #777;
+}
+
+.fp-alert {
+  padding: 14px 16px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+
+.fp-alert-error {
+  background: #fff0ef;
+  border: 1px solid #e7b7b3;
+  color: #a52b22;
+}
+
+.fp-alert-success {
+  background: #edf8ef;
+  border: 1px solid #b8dfbf;
+  color: #236b32;
+}
+
+@media (max-width: 650px) {
+  .fp-admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .fp-admin-main {
+    width: calc(100% - 24px);
+    padding-top: 20px;
+  }
+
+  .fp-form-card,
+  .fp-list-section {
+    padding: 18px;
+  }
+
+  .fp-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-full-width {
+    grid-column: auto;
+  }
+
+  .fp-card-heading,
+  .fp-list-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
