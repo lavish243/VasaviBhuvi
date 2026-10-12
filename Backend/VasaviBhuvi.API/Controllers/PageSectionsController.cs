@@ -25,24 +25,58 @@ public async Task<IActionResult> GetPublishedByKey(
     string sectionKey,
     CancellationToken ct)
     {
-        var rows = await db.PageSectionContents
+        var connection = db.Database.GetDbConnection();
+
+        var allRows = await db.PageSectionContents
+            .IgnoreQueryFilters()
             .AsNoTracking()
-            .Where(x => x.IsPublished &&
-                        x.SectionKey.ToLower() == sectionKey.ToLower())
-            .OrderBy(x => x.SortOrder)
+            .Select(x => new
+            {
+                x.SectionKey,
+                x.IsPublished,
+                x.SortOrder,
+                x.Title
+            })
             .ToListAsync(ct);
 
-        if (rows.Count == 0)
+        var matches = allRows
+            .Where(x => string.Equals(
+                x.SectionKey?.Trim(),
+                sectionKey?.Trim(),
+                StringComparison.OrdinalIgnoreCase))
+            .OrderBy(x => x.SortOrder)
+            .ToList();
+
+        if (matches.Count == 0)
         {
             return NotFound(new
             {
-                message = "Published page section not found.",
+                message = "Section key not found in EF Core results.",
                 requestedKey = sectionKey,
-                database = db.Database.GetDbConnection().Database
+                database = connection.Database,
+                tableRowsRead = allRows.Count,
+                availableSections = allRows.Select(x => new
+                {
+                    x.SectionKey,
+                    x.IsPublished,
+                    x.SortOrder
+                })
             });
         }
 
-        return Ok(rows[0]);
+        var published = matches.FirstOrDefault(x => x.IsPublished);
+
+        if (published == null)
+        {
+            return NotFound(new
+            {
+                message = "Section exists but is not published.",
+                requestedKey = sectionKey,
+                matchingRows = matches
+            });
+        }
+
+        return Ok(published);
     }
 
 
