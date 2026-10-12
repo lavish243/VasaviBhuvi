@@ -21,14 +21,30 @@ public sealed class PageSectionsController(AppDbContext db) : ControllerBase
 
 [HttpGet("api/page-sections/{sectionKey}")]
 [AllowAnonymous]
-public IActionResult GetPublishedByKey(string sectionKey)
+public async Task<IActionResult> GetPublishedByKey(
+    string sectionKey,
+    CancellationToken ct)
     {
-        return Ok(new
+        var rows = await db.PageSectionContents
+            .AsNoTracking()
+            .Where(x => x.IsPublished &&
+                        x.SectionKey.ToLower() == sectionKey.ToLower())
+            .OrderBy(x => x.SortOrder)
+            .ToListAsync(ct);
+
+        if (rows.Count == 0)
         {
-            test = "VASAVI_API_TEST_123",
-            requestedKey = sectionKey
-        });
+            return NotFound(new
+            {
+                message = "Published page section not found.",
+                requestedKey = sectionKey,
+                database = db.Database.GetDbConnection().Database
+            });
+        }
+
+        return Ok(rows[0]);
     }
+
 
     [HttpGet("api/admin/page-sections")]
     [Authorize(Roles = "Admin")]
