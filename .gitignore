@@ -1,29 +1,10 @@
-
-# Node.js
-**/node_modules/
-**/dist/
-**/dist-ssr/
-**/npm-debug.log*
-
-# .NET build output
+*.csproj.user
+.vs/
 **/bin/
 **/obj/
-.vs/
-*.user
-*.suo
-
-# Environment variables and local secrets
-**/.env
-**/.env.*
-!**/.env.example
-**/appsettings.*.local.json
-
-# Uploaded files are not guaranteed to persist on free hosting
-Backend/**/wwwroot/uploads/**
-!Backend/**/wwwroot/uploads/.gitkeep
-
-# IDE and operating system files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+**/node_modules/
+**/dist/
+.env
+.env.*
+!.env.example
+**/Properties/PublishProfiles/
