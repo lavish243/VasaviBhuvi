@@ -26,59 +26,48 @@ public async Task<IActionResult> GetPublishedByKey(
     CancellationToken ct)
     {
         var connection = db.Database.GetDbConnection();
+        var openedHere = connection.State !=
+            System.Data.ConnectionState.Open;
 
-        var allRows = await db.PageSectionContents
-            .IgnoreQueryFilters()
-            .AsNoTracking()
-            .Select(x => new
-            {
-                x.SectionKey,
-                x.IsPublished,
-                x.SortOrder,
-                x.Title
-            })
-            .ToListAsync(ct);
-
-        var matches = allRows
-            .Where(x => string.Equals(
-                x.SectionKey?.Trim(),
-                sectionKey?.Trim(),
-                StringComparison.OrdinalIgnoreCase))
-            .OrderBy(x => x.SortOrder)
-            .ToList();
-
-        if (matches.Count == 0)
+        try
         {
-            return NotFound(new
+            if (openedHere)
+                await connection.OpenAsync(ct);
+
+            await using var command = connection.CreateCommand();
+
+            command.CommandText = """
+            SELECT current_database(),
+                   current_schema(),
+                   COUNT(*)
+            FROM public."PageSectionContents";
+            """;
+
+            await using var reader =
+                await command.ExecuteReaderAsync(ct);
+
+            await reader.ReadAsync(ct);
+
+            var database = reader.GetString(0);
+            var schema = reader.GetString(1);
+            var count = reader.GetInt64(2);
+
+            await reader.CloseAsync();
+
+            return Ok(new
             {
-                message = "Section key not found in EF Core results.",
                 requestedKey = sectionKey,
-                database = connection.Database,
-                tableRowsRead = allRows.Count,
-                availableSections = allRows.Select(x => new
-                {
-                    x.SectionKey,
-                    x.IsPublished,
-                    x.SortOrder
-                })
+                database,
+                schema,
+                pageSectionRows = count
             });
         }
-
-        var published = matches.FirstOrDefault(x => x.IsPublished);
-
-        if (published == null)
+        finally
         {
-            return NotFound(new
-            {
-                message = "Section exists but is not published.",
-                requestedKey = sectionKey,
-                matchingRows = matches
-            });
+            if (openedHere)
+                await connection.CloseAsync();
         }
-
-        return Ok(published);
     }
-
 
     [HttpGet("api/admin/page-sections")]
     [Authorize(Roles = "Admin")]
