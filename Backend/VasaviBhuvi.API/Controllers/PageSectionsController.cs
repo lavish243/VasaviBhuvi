@@ -19,14 +19,15 @@ public sealed class PageSectionsController(AppDbContext db) : ControllerBase
         return Ok(await query.OrderBy(x => x.SortOrder).ThenBy(x => x.Title).ToListAsync(ct));
     }
 
-    [HttpGet("api/page-sections/{sectionKey}")]
-    [AllowAnonymous]
-    public async Task<IActionResult> GetPublishedByKey(string sectionKey, CancellationToken ct)
+[HttpGet("api/page-sections/{sectionKey}")]
+[AllowAnonymous]
+public IActionResult GetPublishedByKey(string sectionKey)
     {
-        var rows = await db.PageSectionContents.AsNoTracking()
-            .Where(x => x.IsPublished && x.SectionKey == sectionKey)
-            .OrderBy(x => x.SortOrder).ToListAsync(ct);
-        return rows.Count == 0 ? NotFound(new { message = "Published page section not found." }) : Ok(rows[0]);
+        return Ok(new
+        {
+            test = "VASAVI_API_TEST_123",
+            requestedKey = sectionKey
+        });
     }
 
     [HttpGet("api/admin/page-sections")]
