@@ -52,17 +52,18 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 builder.Services.AddAuthorization();
 
+
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>() ?? Array.Empty<string>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy
-            .WithOrigins(
-                "http://localhost:5173",
-                "http://localhost:5174"
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
