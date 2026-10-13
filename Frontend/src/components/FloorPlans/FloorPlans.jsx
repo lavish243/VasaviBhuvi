@@ -12,9 +12,12 @@ import floorPlanData from "../../data/floorPlanData";
 import { getFloorPlans } from "../../api/contentService";
 import "./FloorPlans.css";
 
-const API_ORIGIN = (
-  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com/api"
-).replace(/\/api\/?$/, "");
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://vasavi-bhuvi-api.onrender.com/api"
+).replace(/\/+$/, "");
+
+export const API_ORIGIN = API_BASE_URL.replace(/\/api\/?$/i, "");
 
 const getImageUrl = (path) => resolveImageUrl(path);
 

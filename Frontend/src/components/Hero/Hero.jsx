@@ -60,7 +60,8 @@ const Hero = () => {
     if (/^https?:\/\//i.test(path)) return path;
 
     const apiBase = (
-      import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com/api"
+      import.meta.env.VITE_API_BASE_URL ||
+      "https://vasavi-bhuvi-api.onrender.com/api"
     ).replace(/\/+$/, "");
 
     const origin = apiBase.replace(/\/api$/i, "");

@@ -1,8 +1,11 @@
 import axios from "axios";
 
+const DEFAULT_API_URL = "https://vasavi-bhuvi-api.onrender.com/api";
+
 export const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com/api"
+  import.meta.env.VITE_API_BASE_URL || DEFAULT_API_URL
 ).replace(/\/+$/, "");
+
 export const API_ORIGIN = API_BASE_URL.replace(/\/api$/i, "");
 
 // Resolve image paths returned by the API. Local website assets (/images/...)

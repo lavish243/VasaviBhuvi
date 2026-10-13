@@ -7,9 +7,12 @@ import { amenities as localAmenities } from "../../data/amenities";
 import { getAmenities } from "../../api/contentService";
 import "./Amenities.css";
 
-const API_ORIGIN = (
-  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com/api"
-).replace(/\/api\/?$/, "");
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://vasavi-bhuvi-api.onrender.com/api"
+).replace(/\/+$/, "");
+
+const API_ORIGIN = API_BASE_URL.replace(/\/api\/?$/i, "");
 
 const getImageUrl = (imagePath) => resolveImageUrl(imagePath);
 
