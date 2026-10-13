@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "https://localhost:58389/api"
+  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com"
 ).replace(/\/+$/, "");
 export const API_ORIGIN = API_BASE_URL.replace(/\/api$/i, "");
 
@@ -11,7 +11,9 @@ export const resolveImageUrl = (path) => {
   if (typeof path !== "string" || !path.trim()) return "";
   const value = path.trim();
   if (/^(https?:)?\/\//i.test(value) || /^(data:|blob:)/i.test(value)) {
-    return value.startsWith("//") ? `${window.location.protocol}${value}` : value;
+    return value.startsWith("//")
+      ? `${window.location.protocol}${value}`
+      : value;
   }
   if (/^\/?images\//i.test(value)) return `/${value.replace(/^\/+/, "")}`;
   return `${API_ORIGIN}/${value.replace(/^\/+/, "")}`;

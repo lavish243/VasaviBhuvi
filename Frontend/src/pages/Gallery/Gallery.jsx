@@ -125,7 +125,8 @@ const fallbackGalleryImages = [
 
 const getApiOrigin = () => {
   const apiBase =
-    import.meta.env.VITE_API_BASE_URL || "https://localhost:58389/api";
+    import.meta.env.VITE_API_BASE_URL ||
+    "https://vasavi-bhuvi-api.onrender.com";
 
   return apiBase.replace(/\/api\/?$/i, "").replace(/\/+$/, "");
 };

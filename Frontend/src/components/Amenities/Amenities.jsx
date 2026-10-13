@@ -8,7 +8,7 @@ import { getAmenities } from "../../api/contentService";
 import "./Amenities.css";
 
 const API_ORIGIN = (
-  import.meta.env.VITE_API_BASE_URL || "https://localhost:58389/api"
+  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com"
 ).replace(/\/api\/?$/, "");
 
 const getImageUrl = (imagePath) => resolveImageUrl(imagePath);
