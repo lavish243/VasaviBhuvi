@@ -12,7 +12,7 @@ import { getGalleryImages } from "../../api/contentService";
 import "./Gallery.css";
 
 const API_ORIGIN = (
-  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com"
+  import.meta.env.VITE_API_BASE_URL || "https://vasavi-bhuvi-api.onrender.com/api"
 ).replace(/\/api\/?$/, "");
 
 const getImageUrl = (path) => resolveImageUrl(path);

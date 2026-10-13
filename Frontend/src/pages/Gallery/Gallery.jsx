@@ -126,7 +126,7 @@ const fallbackGalleryImages = [
 const getApiOrigin = () => {
   const apiBase =
     import.meta.env.VITE_API_BASE_URL ||
-    "https://vasavi-bhuvi-api.onrender.com";
+    "https://vasavi-bhuvi-api.onrender.com/api";
 
   return apiBase.replace(/\/api\/?$/i, "").replace(/\/+$/, "");
 };
