@@ -4,7 +4,10 @@ import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import siteConfig from "../../config/siteConfig";
 import { getProjectContent } from "../../api/contentService";
 import { getPageSection } from "../../services/pageSectionService";
+import { resolveImageUrl as resolveApiImageUrl } from "../../api/apiClient";
 import "./Hero.css";
+
+const DEFAULT_HERO_IMAGE = "/images/hero/hero-desktop.jpg";
 
 const Hero = () => {
   const [project, setProject] = useState(null);
@@ -13,7 +16,6 @@ const Hero = () => {
   useEffect(() => {
     let isMounted = true;
 
-    // Keep the existing project API.
     getProjectContent()
       .then((data) => {
         if (isMounted) setProject(data);
@@ -22,7 +24,6 @@ const Hero = () => {
         console.error("Failed to load project content:", error);
       });
 
-    // Load the published Hero section from the new API.
     getPageSection("hero")
       .then((data) => {
         if (isMounted) setHeroSection(data);
@@ -50,40 +51,31 @@ const Hero = () => {
   const brochure = project?.brochurePath || siteConfig.brochure;
 
   const subtitle = heroSection?.subtitle || "Premium Residential Project";
-
   const buttonText = heroSection?.buttonText || "Enquire Now";
   const buttonUrl = heroSection?.buttonUrl || "/contact";
 
-  const resolveImageUrl = (path) => {
-    if (!path) return "";
+  const apiHeroImage =
+    resolveApiImageUrl(heroSection?.imagePath) ||
+    resolveApiImageUrl(project?.heroImagePath);
 
-    if (/^https?:\/\//i.test(path)) return path;
-
-    const apiBase = (
-      import.meta.env.VITE_API_BASE_URL ||
-      "https://vasavi-bhuvi-api.onrender.com/api"
-    ).replace(/\/+$/, "");
-
-    const origin = apiBase.replace(/\/api$/i, "");
-
-    return `${origin}/${path.replace(/^\/+/, "")}`;
-  };
-
-  const heroImage =
-    resolveImageUrl(heroSection?.imagePath) ||
-    resolveImageUrl(project?.heroImagePath) ||
-    "https://vasavibhuvi.com/images/new/block-entrance-6661678486813.webp";
+  const heroImage = apiHeroImage || DEFAULT_HERO_IMAGE;
 
   const handleHeroImageError = (event) => {
-    event.currentTarget.onerror = null;
-    event.currentTarget.src =
-      "https://vasavibhuvi.com/images/new/block-entrance-6661678486813.webp";
+    const image = event.currentTarget;
+
+    if (image.dataset.fallbackApplied === "true") return;
+
+    image.dataset.fallbackApplied = "true";
+    image.src = DEFAULT_HERO_IMAGE;
   };
 
   return (
     <section className="hero-section">
       <picture className="hero-background">
-        <source media="(max-width: 768px)" srcSet={heroImage} />
+        <source
+          media="(max-width: 768px)"
+          srcSet="/images/hero/hero-mobile.jpg"
+        />
         <img
           src={heroImage}
           alt={`${projectName} residential project`}
@@ -102,9 +94,7 @@ const Hero = () => {
         </div>
 
         <h1>{projectName}</h1>
-
         <p className="hero-location">{address}</p>
-
         <p className="hero-description">{tagline}</p>
 
         <div className="hero-actions">
