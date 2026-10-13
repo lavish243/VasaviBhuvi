@@ -19,54 +19,28 @@ public sealed class PageSectionsController(AppDbContext db) : ControllerBase
         return Ok(await query.OrderBy(x => x.SortOrder).ThenBy(x => x.Title).ToListAsync(ct));
     }
 
-[HttpGet("api/page-sections/{sectionKey}")]
-[AllowAnonymous]
-public async Task<IActionResult> GetPublishedByKey(
-    string sectionKey,
-    CancellationToken ct)
+    [HttpGet("api/page-sections/{sectionKey}")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetPublishedByKey(
+        string sectionKey,
+        CancellationToken ct)
     {
-        var connection = db.Database.GetDbConnection();
-        var openedHere = connection.State !=
-            System.Data.ConnectionState.Open;
+        var rows = await db.PageSectionContents
+            .AsNoTracking()
+            .Where(x => x.IsPublished && x.SectionKey == sectionKey)
+            .OrderBy(x => x.SortOrder)
+            .ToListAsync(ct);
 
-        try
+        if (rows.Count == 0)
         {
-            if (openedHere)
-                await connection.OpenAsync(ct);
-
-            await using var command = connection.CreateCommand();
-
-            command.CommandText = """
-            SELECT current_database(),
-                   current_schema(),
-                   COUNT(*)
-            FROM public."PageSectionContents";
-            """;
-
-            await using var reader =
-                await command.ExecuteReaderAsync(ct);
-
-            await reader.ReadAsync(ct);
-
-            var database = reader.GetString(0);
-            var schema = reader.GetString(1);
-            var count = reader.GetInt64(2);
-
-            await reader.CloseAsync();
-
-            return Ok(new
+            return NotFound(new
             {
-                requestedKey = sectionKey,
-                database,
-                schema,
-                pageSectionRows = count
+                message = "Published page section not found.",
+                requestedKey = sectionKey
             });
         }
-        finally
-        {
-            if (openedHere)
-                await connection.CloseAsync();
-        }
+
+        return Ok(rows[0]);
     }
 
     [HttpGet("api/admin/page-sections")]
