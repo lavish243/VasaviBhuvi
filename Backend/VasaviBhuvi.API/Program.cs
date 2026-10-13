@@ -53,19 +53,34 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddAuthorization();
 
 
+
 var allowedOrigins = builder.Configuration
     .GetSection("Cors:AllowedOrigins")
     .Get<string[]>() ?? Array.Empty<string>();
+
+// Include production origins even if Render configuration is missing them.
+var productionOrigins = new[]
+{
+    "https://vasavi-bhuvi-frontend.vercel.app",
+    "https://vasavi-bhuvi-frontend-m040qbt2u-lavish22.vercel.app"
+};
+
+allowedOrigins = allowedOrigins
+    .Concat(productionOrigins)
+    .Distinct(StringComparer.OrdinalIgnoreCase)
+    .ToArray();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins(allowedOrigins)
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy
+            .WithOrigins(allowedOrigins)
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     });
 });
+
 
 var app = builder.Build();
 app.UseSwagger();
